@@ -28,8 +28,6 @@ void ShowDemo_LinePlots() {
 
 void render()
 {
-    ImGui::NewFrame();
-
     ImGui::SetNextWindowPos(ImVec2{0.0, 0.0});
     ImGui::SetNextWindowSize(ImVec2{300.0, 150.0});
 
@@ -95,6 +93,4 @@ void render()
 
         ImGui::End();
     }
-
-    ImGui::Render();
 }
