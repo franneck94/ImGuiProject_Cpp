@@ -1,6 +1,6 @@
-#include <iostream>
 #include <array>
 #include <cstdint>
+#include <iostream>
 
 #include "imgui.h"
 #include "implot.h"
@@ -11,12 +11,15 @@ void render_window1()
 {
     static auto toggle = false;
 
-    ImGui::SetNextWindowPos(ImVec2{ 0.0F, 0.0F });
-    ImGui::SetNextWindowSize(ImVec2{ 110.0F, 120.0F });
-    const auto window_flags = (ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoTitleBar);
+    ImGui::SetNextWindowPos(ImVec2{0.0F, 0.0F});
+    ImGui::SetNextWindowSize(ImVec2{110.0F, 120.0F});
+    const auto window_flags =
+        (ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove |
+         ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize |
+         ImGuiWindowFlags_NoTitleBar);
     if (ImGui::Begin("window###1", nullptr, window_flags))
     {
-        if (ImGui::Button("Click me###1", ImVec2{ 100.0F, 50.0F }))
+        if (ImGui::Button("Click me###1", ImVec2{100.0F, 50.0F}))
         {
             toggle = !toggle;
         }
@@ -31,9 +34,12 @@ void render_window1()
 
 void render_window2()
 {
-    ImGui::SetNextWindowPos(ImVec2{ 400.0F, 400.0F });
-    ImGui::SetNextWindowSize(ImVec2{ 400.0F, 150.0F });
-    const auto window_flags = (ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoTitleBar);
+    ImGui::SetNextWindowPos(ImVec2{400.0F, 400.0F});
+    ImGui::SetNextWindowSize(ImVec2{400.0F, 150.0F});
+    const auto window_flags =
+        (ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove |
+         ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize |
+         ImGuiWindowFlags_NoTitleBar);
     if (ImGui::Begin("window###2", nullptr, window_flags))
     {
         constexpr auto num_cols = 3;
@@ -47,11 +53,13 @@ void render_window2()
                 ImGui::TableNextColumn();
                 ImGui::Text("Row %d", row);
                 ImGui::TableNextColumn();
-                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4{ 0.0F, 0.0, 1.0F, 1.0F });
+                ImGui::PushStyleColor(ImGuiCol_Text,
+                                      ImVec4{0.0F, 0.0, 1.0F, 1.0F});
                 ImGui::Text("Some contents");
                 ImGui::PopStyleColor();
                 ImGui::TableNextColumn();
-                ImGui::PushStyleColor(ImGuiCol_Text, ImVec4{ 1.0F, 0.0, 0.0F, 1.0F });
+                ImGui::PushStyleColor(ImGuiCol_Text,
+                                      ImVec4{1.0F, 0.0, 0.0F, 1.0F});
                 ImGui::Text("123.456");
                 ImGui::PopStyleColor();
             }
@@ -66,9 +74,12 @@ void render_window3()
     static auto checked = false;
     static auto slider_value = 0;
 
-    ImGui::SetNextWindowPos(ImVec2{ 700.0F, 300.0F });
-    ImGui::SetNextWindowSize(ImVec2{ 400.0F, 150.0F });
-    const auto window_flags = (ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoTitleBar);
+    ImGui::SetNextWindowPos(ImVec2{700.0F, 300.0F});
+    ImGui::SetNextWindowSize(ImVec2{400.0F, 150.0F});
+    const auto window_flags =
+        (ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoMove |
+         ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize |
+         ImGuiWindowFlags_NoTitleBar);
     if (ImGui::Begin("window###3", nullptr, window_flags))
     {
         ImGui::Text("Text1");
@@ -100,7 +111,8 @@ void render_window4()
     for (int i = 0; i < size1; ++i)
     {
         xs1[i] = i * 0.001f;
-        ys1[i] = 0.5f + 0.5f * sinf(50 * (xs1[i] + (float)ImGui::GetTime() / 10));
+        ys1[i] =
+            0.5f + 0.5f * sinf(50 * (xs1[i] + (float)ImGui::GetTime() / 10));
     }
     for (int i = 0; i < size2; ++i)
     {
@@ -108,9 +120,10 @@ void render_window4()
         ys2[i] = xs2[i] * xs2[i];
     }
 
-    ImGui::SetNextWindowPos(ImVec2{ 200.0F, 200.0F }, ImGuiCond_FirstUseEver);
-    ImGui::SetNextWindowSize(ImVec2{ 400.0F, 150.0F }, ImGuiCond_FirstUseEver);
-    const auto window_flags = (ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoCollapse);
+    ImGui::SetNextWindowPos(ImVec2{200.0F, 200.0F}, ImGuiCond_FirstUseEver);
+    ImGui::SetNextWindowSize(ImVec2{400.0F, 150.0F}, ImGuiCond_FirstUseEver);
+    const auto window_flags =
+        (ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoCollapse);
     if (ImGui::Begin("window###4", nullptr, window_flags))
     {
         ImPlot::CreateContext();
