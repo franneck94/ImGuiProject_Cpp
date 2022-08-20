@@ -141,8 +141,10 @@ void render_window4()
 
 void render()
 {
-    render_window1();
-    render_window2();
-    render_window3();
-    render_window4();
+    // render_window1();
+    // render_window2();
+    // render_window3();
+    // render_window4();
+
+    render_exercise();
 }
