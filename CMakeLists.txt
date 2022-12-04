@@ -34,7 +34,6 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/)
 include(FetchContent)
 
 include(AddGitSubmodule)
-include(Docs)
 include(Warnings)
 include(Tools)
 include(LTO)
